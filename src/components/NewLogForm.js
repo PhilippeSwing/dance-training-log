@@ -1,12 +1,40 @@
 import React, { Component } from 'react';
 
 class NewLogForm extends Component {
+    constructor() {
+        super();
+        this.state = {
+            date: '1',
+            partners: '1',
+            outline: {
+                topics: '1',
+                video: '1',
+                outlineNotes: '1',
+            },
+            retrospective: {
+                workInProgress: '1',
+                readyForDance: '1',
+                newIdeas: '1',
+                partnerLearn: '1',
+                gameNext: '1',
+                retroNotes: '1',
+            }
+        }
+    }
+
+    handleSubmit = (e) => {
+        // Remove default on form submit
+        e.preventDefault();
+        // Add user input to database
+        this.props.addLogToDatabase(this.state.date, this.state.partners, this.state.outline, this.state.retrospective);
+    }
+
     render() {
         console.log('NewLogForm render called');
         return (
             <section className="new-log-section wrapper-sec">
                 <h2 className="header__create">Create New Log</h2>
-                <form className="form-new-log">
+                <form onSubmit={this.handleSubmit} className="form-new-log">
                     {/* Practice Date and Partner Names */}
                     <div className="date-partners-input-container">
                         <label htmlFor="date-input" className="date-label">Date:</label>

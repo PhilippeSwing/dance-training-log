@@ -9,17 +9,29 @@ import NewLogForm from './components/NewLogForm';
 import PastLogs from './components/PastLogs';
 import ButtonCreateLog from './components/ButtonCreateLog';
 import ButtonPastLogs from './components/ButtonPastLogs';
+const dbRef = firebase.database().ref();
 
 class App extends Component {
   componentDidMount() {
     console.log('App component did mount fired');
   }
+
+  addLogToDatabase = (date, partners, outline, retrospective) => {
+    dbRef.push({
+      date: date,
+      partners: partners,
+      outline: outline,
+      retrospective: retrospective,
+    })
+    // console.log('addLogToDatabase works!');
+  }
+
+
   render() {
     console.log('App render called');
     // Goes to the root of the firebase database
 
     // FIREBASE
-    const dbRef = firebase.database().ref();
     // add event listener to tell us if the database has anything on load and when everything changes
     dbRef.on('value', function (snapshot) {
       console.log(snapshot.val());
@@ -38,7 +50,7 @@ class App extends Component {
           </div>
         </section>
         {/* // NEW LOG PAGE/SECTION */}
-        <NewLogForm />
+        <NewLogForm addLogToDatabase={this.addLogToDatabase} />
 
         {/* PAST LOGS PAGE/SECTION */}
         <PastLogs />
