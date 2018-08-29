@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import headerImage from './assets/home-image.jpg'; // Replace this with my Home page image
-import './App.css';
+import './styles/App.css';
 // Imported the configured firebase module
-import firebase from './firebase';
+import firebase from './components/firebase';
 
 // COMPONENTS
 import NewLogForm from './components/NewLogForm';
@@ -30,7 +30,7 @@ class App extends Component {
           <header className="header">
             <h1 className="header__main-heading">Training in Rhythm</h1>
 
-            <img src={headerImage} className="header__image" alt="Picture of Phil dancing with a green foam ring, wearing brown pants, a blue polo shirt and suspenders." />
+            <img src={headerImage} className="header__image" alt="Phil dancing with a green foam ring, wearing brown pants, a blue polo shirt and suspenders." />
           </header>
           <div className="main-button-container">
             <ButtonCreateLog />
