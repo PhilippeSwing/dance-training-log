@@ -11,11 +11,11 @@ class PastLogs extends Component {
         // Turn the firebase log object intoan array
         const logArray = Object.entries(logObject);
         // Map through the logArray
-        logArray.map((item) => {
-            return (
-                // Get all the values of the properties from firebase. Get rid og the oneLog node?
-            );
-        });
+        // logArray.map((item) => {
+        //     return (
+        //         Get all the values of the properties from firebase. Get rid of the oneLog node?
+        //     );
+        // });
     }
 
     render() {
