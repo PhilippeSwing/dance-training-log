@@ -4,7 +4,7 @@ class ButtonCreateLog extends React.Component {
     render() {
         console.log('ButtonCreateLog render called');
         return (
-            <button className="create-log-button button">Create New Log</button>
+            <a href="#new-log-section" className="create-log-button button">Create New Log</a>
         )
     }
 }
