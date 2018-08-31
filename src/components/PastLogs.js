@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
 
+import LogModal from './LogModal';
+
 class PastLogs extends Component {
-    // constructor() {
-    //     super();
-    // This is an empty array that I will eventually push the firebase results into
-    //     this.state = [];
-    // }
+    constructor() {
+        super();
+        // This is an empty object that I will hold an info object for whatever log list te is clicked.
+        this.state = {};
+    }
 
+    //This function will set the state of PastLogs to the object of information for whichever log <li> the user clicked. A prop with this object, this.state, will be passed to the LogModal component where the modal JSX will be rendered.
+    clickedLogInfo = (logInfo) => {
+        console.log(logInfo);
+        return (
+            this.setState(logInfo)
+        );
+    }
 
+    clickedLogItem = (item) => {
+        // e.target.id === this.props.logsArray
+        console.log(item);
+    }
 
     render() {
         console.log('PastLogs render called');
@@ -22,27 +35,21 @@ class PastLogs extends Component {
             <section className="pastlogs-section wrapper-sec" id="pastlogs-section">
                 <h2 className="header__past">Past Logs</h2>
                 <ul className="log-list">
+                    {/* Pass in the logsArray from App.js and map it to render the date and partner names for each practice session. */}
                     {this.props.logsArray.map((item) => {
+                        console.log(item);
                         return (
-                            <li key={item.key}>
-                                <h4>{item.date}{item.partners}</h4>
+
+                            // OnClick of any one log item, display the entire log details as a pop-up modal.
+                            // If the key of the list item matches the key of the object in the logsArray, display ll the details from the matching object.
+                            <li key={item.key} onClick={() => this.clickedLogInfo(item)}>
+                                <h4 id={item.key}>{item.date} - {item.partners}</h4>
                             </li>
                         )
                     })}
                 </ul>
 
-                <div className="past-logs__modal">
-                    <h4 className="past-Log__modal__item">Date: </h4>
-                    <h4 className="past-Log__modal__item">Topics: </h4>
-                    <h4 className="past-Log__modal__item">Video: </h4>
-                    <h4 className="past-Log__modal__item">Prep notes: </h4>
-                    <h4 className="past-Log__modal__item">Work in progress: </h4>
-                    <h4 className="past-Log__modal__item">Ready for the dance floor: </h4>
-                    <h4 className="past-Log__modal__item">New ideas: </h4>
-                    <h4 className="past-Log__modal__item">What I learned from my partner(s): </h4>
-                    <h4 className="past-Log__modal__item">Game plan for next practice:</h4>
-                    <h4 className="past-Log__modal__item">Retro notes: </h4>
-                </div>
+                <LogModal clickedLogInfo={this.state} />
             </section>
         )
     }
