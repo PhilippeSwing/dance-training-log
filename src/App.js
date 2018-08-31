@@ -9,10 +9,19 @@ import NewLogForm from './components/NewLogForm';
 import PastLogs from './components/PastLogs';
 
 // GLOBAL VARIABLES
+// Goes to the root of the firebase database
 const dbRef = firebase.database().ref();
 
 // APP class
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      logs: [],
+    };
+
+  }
+
   componentDidMount() {
     // FIREBASE
     // add event listener to tell us if the database has anything on load and when everything changes
@@ -33,11 +42,8 @@ class App extends Component {
   }
 
   sortLogs = (logObject) => {
-    // Turn the firebase log object into an array
-    const logArray = Object.entries(logObject);
-    // console.log(logArray);
-    // Map through the logArray
-    logArray.map((logItem) => {
+    // Turn the firebase log object into an array and map it to return an array of the results we want.
+    const logsArray = Object.entries(logObject).map((logItem) => {
       return {
         key: logItem[0],
         date: logItem[1].date,
@@ -54,11 +60,14 @@ class App extends Component {
         retroNotes: logItem[1].retroNotes,
       }
     })
+    // Set the state as the array of results from firebase so that I can pass it as a prop to PastLogs.js
+    this.setState({
+      logs: logsArray
+    })
+    console.log(this.state);
   }
 
   render() {
-    console.log('App render called');
-    // Goes to the root of the firebase database
 
     return (
       <div className="App wrapper-prim">
@@ -67,7 +76,7 @@ class App extends Component {
         {/* // NEW LOG PAGE/SECTION */}
         <NewLogForm addLogToDatabase={this.addLogToDatabase} />
         {/* PAST LOGS PAGE/SECTION */}
-        <PastLogs />
+        <PastLogs logsArray={this.state.logs} />
       </div>
     );
   }

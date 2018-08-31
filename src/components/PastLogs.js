@@ -1,22 +1,13 @@
 import React, { Component } from 'react';
 
 class PastLogs extends Component {
-    constructor() {
-        super();
-        // This is an empty array that I will eventually push the firebase results into
-        this.state = [];
-    }
+    // constructor() {
+    //     super();
+    // This is an empty array that I will eventually push the firebase results into
+    //     this.state = [];
+    // }
 
-    sortLogs = (logObject) => {
-        // Turn the firebase log object intoan array
-        const logArray = Object.entries(logObject);
-        // Map through the logArray
-        // logArray.map((item) => {
-        //     return (
-        //         Get all the values of the properties from firebase. Get rid of the oneLog node?
-        //     );
-        // });
-    }
+
 
     render() {
         console.log('PastLogs render called');
@@ -30,11 +21,18 @@ class PastLogs extends Component {
         return (
             <section className="pastlogs-section wrapper-sec" id="pastlogs-section">
                 <h2 className="header__past">Past Logs</h2>
-
-                {/* <ul className="log-list">{logListItems}</ul> */}
+                <ul className="log-list">
+                    {this.props.logsArray.map((item) => {
+                        return (
+                            <li key={item.key}>
+                                <h4>{item.date}{item.partners}</h4>
+                            </li>
+                        )
+                    })}
+                </ul>
 
                 <div className="past-logs__modal">
-                    <h4 className="past-Log__modal__item">Date: September 4, 2018</h4>
+                    <h4 className="past-Log__modal__item">Date: </h4>
                     <h4 className="past-Log__modal__item">Topics: </h4>
                     <h4 className="past-Log__modal__item">Video: </h4>
                     <h4 className="past-Log__modal__item">Prep notes: </h4>
