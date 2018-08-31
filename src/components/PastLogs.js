@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import LogModal from './LogModal';
+import TopNav from './TopNav';
 
 class PastLogs extends Component {
     constructor() {
@@ -33,10 +34,12 @@ class PastLogs extends Component {
 
         return (
             <section className="pastlogs-section wrapper-sec" id="pastlogs-section">
+                <TopNav />
+
                 <h2 className="header__past">Past Logs</h2>
                 <ul className="log-list">
                     {/* Pass in the logsArray from App.js and map it to render the date and partner names for each practice session. */}
-                    {this.props.logsArray.map((item) => {
+                    {this.props.logsArray.length > 0 ? this.props.logsArray.map((item) => {
                         console.log(item);
                         return (
 
@@ -46,9 +49,8 @@ class PastLogs extends Component {
                                 <h4 id={item.key}>{item.date} - {item.partners}</h4>
                             </li>
                         )
-                    })}
+                    }) : <li></li>}
                 </ul>
-
                 <LogModal clickedLogInfo={this.state} />
             </section>
         )
