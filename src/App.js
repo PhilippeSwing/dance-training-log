@@ -67,6 +67,12 @@ class App extends Component {
     console.log(this.state);
   }
 
+  toggleModal = () => {
+    this.setState(prevState => ({
+      modalIsOpen: !prevState.modalIsOpen
+    }));
+  }
+
   render() {
 
     return (
@@ -76,7 +82,7 @@ class App extends Component {
         {/* // NEW LOG PAGE/SECTION */}
         <NewLogForm addLogToDatabase={this.addLogToDatabase} />
         {/* PAST LOGS PAGE/SECTION */}
-        <PastLogs logsArray={this.state.logs} />
+        <PastLogs logsArray={this.state.logs} toggleModal={this.toggleModal} />
       </div>
     );
   }

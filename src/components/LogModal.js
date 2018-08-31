@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 
 class LogModal extends Component {
+    // constructor() {
+    //     super();
+    //     // this.state = this.props.clickedLogInfo;
+    // }
 
 
     render() {
-        console.log(this.props.clickedLogInfo);
+        // console.log(this.props.clickedLogInfo);
         const videoHref = `${this.props.clickedLogInfo.video}?t=${this.props.clickedLogInfo.timestamp}`;
-        console.log(videoHref);
+        // console.log(videoHref);
+
         return (
             <div className="past-logs__modal">
                 <h4 className="past-Log__modal__item">Date: {this.props.clickedLogInfo.date}</h4>
@@ -21,7 +26,7 @@ class LogModal extends Component {
                 <h4 className="past-Log__modal__item">What I learned from my partner(s): {this.props.clickedLogInfo.partnerLearn}</h4>
                 <h4 className="past-Log__modal__item">Game plan for next practice: {this.props.clickedLogInfo.gameNext}</h4>
                 <h4 className="past-Log__modal__item">Retro notes: {this.props.clickedLogInfo.retroNotes}</h4>
-                <a onClick={this.handleCloseButtonClick} class="past-Log__modal__close-link" href="#"><i class="past-Log__modal__close-link__icon far fa-times-circle"></i></a>
+                <p onClick={this.props.toggleModal} class="past-Log__modal__close-link" ><i class="past-Log__modal__close-link__icon far fa-times-circle"></i></p>
             </div>
         )
     }
