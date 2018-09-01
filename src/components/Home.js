@@ -4,11 +4,14 @@ import React, { Component } from 'react';
 import headerImage from '../assets/home-image.jpg';
 import ButtonCreateLog from './ButtonCreateLog';
 import ButtonPastLogs from './ButtonPastLogs';
+import TopNav from './TopNav';
 
 class Home extends Component {
     render() {
         return (
             <section className="home-page-section wrapper-sec">
+                <TopNav />
+
                 <header className="header">
                     <h1 className="header__main-heading">Training in Rhythm</h1>
 

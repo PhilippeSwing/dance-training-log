@@ -32,11 +32,11 @@ class PastLogs extends Component {
     }
 
     // DELETE PAST LOG FROM FRONT END
-    // Target the ul, then remove the child li, based on it's key attribute
+    // Target the ul, then remove the child li based on it's key attribute/value
     // Look for onChild-Removed and the Vanilla JS version of .find()
 
     // DELETE PAST LOG FROM FIREBASE
-
+    // On click of the delete icon use the vanilla JS verison of .remove() and remove the log based on its key attribute/value. Example: app.database.ref(`/mediaList/${id}`).remove();
 
 
     render() {

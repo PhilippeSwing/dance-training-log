@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import './styles/App.css';
 // Imported the configured firebase module
 import firebase from './components/firebase';
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 // COMPONENTS
 import Home from './components/Home';
-import NewLogForm from './components/NewLogForm';
-import PastLogs from './components/PastLogs';
+// import NewLogForm from './components/NewLogForm';
+// import PastLogs from './components/PastLogs';
+// import TopNav from './components/TopNav';
 
 // GLOBAL VARIABLES
 // Goes to the root of the firebase database
@@ -67,23 +69,22 @@ class App extends Component {
     console.log(this.state);
   }
 
-  toggleModal = () => {
-    this.setState(prevState => ({
-      modalIsOpen: !prevState.modalIsOpen
-    }));
-  }
-
   render() {
 
     return (
+      // <Router>
       <div className="App wrapper-prim">
         {/* HOME PAGE */}
         <Home />
-        {/* // NEW LOG PAGE/SECTION */}
-        <NewLogForm addLogToDatabase={this.addLogToDatabase} />
+        {/* <Route path="./Home" component={Home} /> */}
+        {/* NEW LOG PAGE/SECTION */}
+        {/* <NewLogForm addLogToDatabase={this.addLogToDatabase} /> */}
+        {/* <Route path="./NewLogForm" component={NewLogForm} /> */}
         {/* PAST LOGS PAGE/SECTION */}
-        <PastLogs logsArray={this.state.logs} toggleModal={this.toggleModal} />
+        {/* <PastLogs logsArray={this.state.logs} toggleModal={this.toggleModal} /> */}
+        {/* <Route path="./PastLogs" component={PastLogs} /> */}
       </div>
+      // </Router>
     );
   }
 }
