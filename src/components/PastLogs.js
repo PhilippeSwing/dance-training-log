@@ -12,15 +12,15 @@ class PastLogs extends Component {
         };
     }
 
-    //This function will set the state of PastLogs to the object of information for whichever log <li> the user clicked. A prop with this object, this.state, will be passed to the LogModal component where the modal JSX will be rendered.
+    //This clickedLogInfo function sets the state to equal the object returned from Firebase, however the setState has a callback function which adds modalIsOpen: true as a property to the state. Therefore, whichever <li> is clicked, modalIsOpen will always be set to true, with all state information pertaining to the <li>.A prop with this object (this.state) will be passed to the LogModal component where the modal JSX will be rendered.
     clickedLogInfo = (logInfo) => {
         // logInfo.modalIsOpen = 
         this.setState(logInfo, () => {
             this.setState({
                 modalIsOpen: true
             })
-
         })
+        console.log(this.state);
     }
 
 
@@ -30,6 +30,13 @@ class PastLogs extends Component {
             modalIsOpen: !this.state.modalIsOpen
         })
     }
+
+    // DELETE PAST LOG FROM FRONT END
+    // Target the ul, then remove the child li, based on it's key attribute
+    // Look for onChild-Removed and the Vanilla JS version of .find()
+
+    // DELETE PAST LOG FROM FIREBASE
+
 
 
     render() {
