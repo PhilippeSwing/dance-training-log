@@ -28,6 +28,7 @@ class App extends Component {
     // add event listener to tell us if the database has anything on load and when everything changes
     dbRef.on('value', (snapshot) => {
       this.sortLogs(snapshot.val());
+      console.log(snapshot.val());
     });
   }
 
@@ -66,10 +67,17 @@ class App extends Component {
     console.log(this.state);
   }
 
-  deleteLog = (key) => {
+  deleteLogFrontEnd = (key) => {
     this.setState({
       logs: this.state.logs.filter(log => log.key !== key)
     })
+  }
+
+  deleteLogFirebase = (key) => {
+    // dbRef.on('value', (snapshot) => {  
+    // }
+    // console.log(firebase.database().ref('dance-training-log').val());
+    return firebase.database().ref(`/${key}`).remove();
   }
 
   render() {
@@ -88,7 +96,7 @@ class App extends Component {
           {/* Route to touch the PastLogs component/page  */}
           <Route
             path='/PastLogs'
-            render={(props) => (<PastLogs {...props} logsArray={this.state.logs} toggleModal={this.toggleModal} deleteLog={this.deleteLog}
+            render={(props) => (<PastLogs {...props} logsArray={this.state.logs} toggleModal={this.toggleModal} deleteLogFrontEnd={this.deleteLogFrontEnd} deleteLogFirebase={this.deleteLogFirebase}
             />)}
           />
         </div>

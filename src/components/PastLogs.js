@@ -20,7 +20,6 @@ class PastLogs extends Component {
                 modalIsOpen: true
             })
         })
-        console.log(this.state);
     }
 
 
@@ -64,7 +63,7 @@ class PastLogs extends Component {
                                 <li key={item.key} onClick={() => { this.clickedLogInfo(item) }}>
                                     <h4 id={item.key}>{item.date} - {item.partners}</h4>
                                 </li>
-                                <i class="delete-log__icon fas fa-trash-alt" onClick={() => { this.props.deleteLog(item.key) }}></i>
+                                <i className="delete-log__icon fas fa-trash-alt" onClick={() => { this.props.deleteLogFrontEnd(item.key); this.props.deleteLogFirebase(item.key); }}></i>
                             </div>
                         )
                     }) : <li></li>}
