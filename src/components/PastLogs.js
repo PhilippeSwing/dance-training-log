@@ -58,12 +58,14 @@ class PastLogs extends Component {
                     {this.props.logsArray.length > 0 ? this.props.logsArray.map((item) => {
                         // console.log(item);
                         return (
-
-                            // OnClick of any one log item, display the entire log details as a pop-up modal.
-                            // If the key of the list item matches the key of the object in the logsArray, display ll the details from the matching object.
-                            <li key={item.key} onClick={() => { this.clickedLogInfo(item) }}>
-                                <h4 id={item.key}>{item.date} - {item.partners}</h4>
-                            </li>
+                            <div>
+                                {/* OnClick of any one log item, display the entire log details as a pop-up modal.
+                                If the key of the list item matches the key of the object in the logsArray, display ll the details from the matching object. */}
+                                <li key={item.key} onClick={() => { this.clickedLogInfo(item) }}>
+                                    <h4 id={item.key}>{item.date} - {item.partners}</h4>
+                                </li>
+                                <i class="delete-log__icon fas fa-trash-alt" onClick={() => { this.props.deleteLog(item.key) }}></i>
+                            </div>
                         )
                     }) : <li></li>}
                 </ul>

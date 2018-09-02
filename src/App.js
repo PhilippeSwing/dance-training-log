@@ -57,11 +57,19 @@ class App extends Component {
         retroNotes: logItem[1].retroNotes,
       }
     })
+
+    console.log(logsArray);
     // Set the state as the array of results from firebase so that I can pass it as a prop to PastLogs.js
     this.setState({
       logs: logsArray
     })
     console.log(this.state);
+  }
+
+  deleteLog = (key) => {
+    this.setState({
+      logs: this.state.logs.filter(log => log.key !== key)
+    })
   }
 
   render() {
@@ -80,7 +88,7 @@ class App extends Component {
           {/* Route to touch the PastLogs component/page  */}
           <Route
             path='/PastLogs'
-            render={(props) => (<PastLogs {...props} logsArray={this.state.logs} toggleModal={this.toggleModal}
+            render={(props) => (<PastLogs {...props} logsArray={this.state.logs} toggleModal={this.toggleModal} deleteLog={this.deleteLog}
             />)}
           />
         </div>
