@@ -1,10 +1,15 @@
 import React from 'react';
+// Import Link of BrowserRouter from the react-router-dom package
+import {
+    BrowserRouter as Router, Link
+} from 'react-router-dom';
 
 class ButtonPastLogs extends React.Component {
     render() {
-        // console.log('ButtonPastLogs render called');
         return (
-            <a href="#pastlogs-section" className="past-logs-button button">Past Logs</a>
+            <div>
+                <Link class="home-button__past-logs button" to="/PastLogs">Past Logs</Link>
+            </div>
         )
     }
 }

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import './styles/App.css';
 // Imported the configured firebase module
 import firebase from './components/firebase';
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// Import Route of BrowserRouter from the react-router-dom package
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // COMPONENTS
 import Home from './components/Home';
-// import NewLogForm from './components/NewLogForm';
-// import PastLogs from './components/PastLogs';
-// import TopNav from './components/TopNav';
+import NewLogForm from './components/NewLogForm';
+import PastLogs from './components/PastLogs';
 
 // GLOBAL VARIABLES
 // Goes to the root of the firebase database
@@ -35,10 +35,6 @@ class App extends Component {
   addLogToDatabase = (oneLog) => {
     dbRef.push(
       oneLog
-      // date: date,
-      // partners: partners,
-      // outline: outline,
-      // retrospective: retrospective,
     )
   }
 
@@ -71,19 +67,24 @@ class App extends Component {
   render() {
 
     return (
-      // <Router>
-      <div className="App wrapper-prim">
-        {/* HOME PAGE */}
-        <Home />
-        {/* <Route path="./Home" component={Home} /> */}
-        {/* NEW LOG PAGE/SECTION */}
-        {/* <NewLogForm addLogToDatabase={this.addLogToDatabase} /> */}
-        {/* <Route path="./NewLogForm" component={NewLogForm} /> */}
-        {/* PAST LOGS PAGE/SECTION */}
-        {/* <PastLogs logsArray={this.state.logs} toggleModal={this.toggleModal} /> */}
-        {/* <Route path="./PastLogs" component={PastLogs} /> */}
-      </div>
-      // </Router>
+      <Router>
+        <div className="App wrapper-prim">
+          {/* Route to touch the HOME component/page */}
+          <Route path="/" exact component={Home} />
+          {/* Route to touch the NewLogForm component/page */}
+          <Route
+            path='/NewLogForm'
+            render={(props) => (<NewLogForm {...props} addLogToDatabase={this.addLogToDatabase}
+            />)}
+          />
+          {/* Route to touch the PastLogs component/page  */}
+          <Route
+            path='/PastLogs'
+            render={(props) => (<PastLogs {...props} logsArray={this.state.logs} toggleModal={this.toggleModal}
+            />)}
+          />
+        </div>
+      </Router>
     );
   }
 }
