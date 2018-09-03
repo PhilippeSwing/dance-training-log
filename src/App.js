@@ -74,9 +74,6 @@ class App extends Component {
   }
 
   deleteLogFirebase = (key) => {
-    // dbRef.on('value', (snapshot) => {  
-    // }
-    // console.log(firebase.database().ref('dance-training-log').val());
     return firebase.database().ref(`/${key}`).remove();
   }
 
@@ -84,21 +81,23 @@ class App extends Component {
 
     return (
       <Router>
-        <div className="App wrapper-prim">
-          {/* Route to touch the HOME component/page */}
-          <Route path="/" exact component={Home} />
-          {/* Route to touch the NewLogForm component/page */}
-          <Route
-            path='/NewLogForm'
-            render={(props) => (<NewLogForm {...props} addLogToDatabase={this.addLogToDatabase}
-            />)}
-          />
-          {/* Route to touch the PastLogs component/page  */}
-          <Route
-            path='/PastLogs'
-            render={(props) => (<PastLogs {...props} logsArray={this.state.logs} toggleModal={this.toggleModal} deleteLogFrontEnd={this.deleteLogFrontEnd} deleteLogFirebase={this.deleteLogFirebase}
-            />)}
-          />
+        <div className="app-container-prim wrapper-prim">
+          <div className="app-container-sec wrapper-sec">
+            {/* Route to touch the HOME component/page */}
+            <Route path="/" exact component={Home} />
+            {/* Route to touch the NewLogForm component/page */}
+            <Route
+              path='/NewLogForm'
+              render={(props) => (<NewLogForm {...props} addLogToDatabase={this.addLogToDatabase}
+              />)}
+            />
+            {/* Route to touch the PastLogs component/page  */}
+            <Route
+              path='/PastLogs'
+              render={(props) => (<PastLogs {...props} logsArray={this.state.logs} toggleModal={this.toggleModal} deleteLogFrontEnd={this.deleteLogFrontEnd} deleteLogFirebase={this.deleteLogFirebase}
+              />)}
+            />
+          </div>
         </div>
       </Router>
     );

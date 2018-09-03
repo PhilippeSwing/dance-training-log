@@ -8,7 +8,7 @@ class ButtonPastLogs extends React.Component {
     render() {
         return (
             <div>
-                <Link class="home-button__past-logs button" to="/PastLogs">Past Logs</Link>
+                <Link className="home-button__past-logs button" to="/PastLogs">Past Logs</Link>
             </div>
         )
     }

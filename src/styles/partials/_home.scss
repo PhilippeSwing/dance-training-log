@@ -1,0 +1,33 @@
+// .home-page-section {
+    
+// }
+
+.home-page-content {
+    height: 100vh;
+    background: url('../assets/home-background-sec.png') bottom/contain no-repeat;
+}
+
+.header__image {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.main-button-container {
+    display: flex;
+    flex-direction: column;
+}
+// =================
+// RESPONSIVE DESIGN
+// =================
+// **Landscape phone to portrait tablet**
+@media (min-width: 480px) {
+
+}
+// **Portrait tablet to small desktops**
+@media (min-width: 767px) {
+    
+}
+// **Small desktop to large desktops**
+@media (min-width: 940px) {
+    
+}

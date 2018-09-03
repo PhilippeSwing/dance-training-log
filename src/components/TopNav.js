@@ -8,9 +8,9 @@ class TopNav extends Component {
     render() {
         return (
             <div className="top-nav">
-                <Link to="/">Home</Link>
-                <Link to="/NewLogForm">Create Log</Link>
-                <Link to="/PastLogs">Past Logs</Link>
+                <Link className="top-nav__link" to="/">Home</Link>
+                <Link className="top-nav__link" to="/NewLogForm">Create Log</Link>
+                <Link className="top-nav__link" to="/PastLogs">Past Logs</Link>
             </div>
         )
     }

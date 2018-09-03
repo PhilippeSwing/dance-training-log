@@ -48,28 +48,30 @@ class PastLogs extends Component {
 
 
         return (
-            <section className="pastlogs-section wrapper-sec" id="pastlogs-section">
-                <TopNav />
+            <section className="pastlogs-section wrapper-prim" id="pastlogs-section">
+                <div className="pastlogs-content wrapper-sec">
+                    <TopNav />
 
-                <h2 className="header__past">Past Logs</h2>
-                <ul className="log-list">
-                    {/* Pass in the logsArray from App.js and map it to render the date and partner names for each practice session. */}
-                    {this.props.logsArray.length > 0 ? this.props.logsArray.map((item) => {
-                        // console.log(item);
-                        return (
-                            <div>
-                                {/* OnClick of any one log item, display the entire log details as a pop-up modal.
+                    <h2 className="header__past">Past Logs</h2>
+                    <ul className="log-list">
+                        {/* Pass in the logsArray from App.js and map it to render the date and partner names for each practice session. */}
+                        {this.props.logsArray.length > 0 ? this.props.logsArray.map((item) => {
+                            // console.log(item);
+                            return (
+                                <div>
+                                    {/* OnClick of any one log item, display the entire log details as a pop-up modal.
                                 If the key of the list item matches the key of the object in the logsArray, display ll the details from the matching object. */}
-                                <li key={item.key} onClick={() => { this.clickedLogInfo(item) }}>
-                                    <h4 id={item.key}>{item.date} - {item.partners}</h4>
-                                </li>
-                                <i className="delete-log__icon fas fa-trash-alt" onClick={() => { this.props.deleteLogFrontEnd(item.key); this.props.deleteLogFirebase(item.key); }}></i>
-                            </div>
-                        )
-                    }) : <li></li>}
-                </ul>
+                                    <li key={item.key} onClick={() => { this.clickedLogInfo(item) }}>
+                                        <h4 id={item.key}>{item.date} - {item.partners}</h4>
+                                    </li>
+                                    <i className="delete-log__icon fas fa-trash-alt" onClick={() => { this.props.deleteLogFrontEnd(item.key); this.props.deleteLogFirebase(item.key); }}></i>
+                                </div>
+                            )
+                        }) : <li></li>}
+                    </ul>
 
-                {this.state.modalIsOpen === true ? <LogModal toggleModal={this.toggleModal} clickedLogInfo={this.state} /> : null}
+                    {this.state.modalIsOpen === true ? <LogModal toggleModal={this.toggleModal} clickedLogInfo={this.state} /> : null}
+                </div>
             </section>
         )
     }

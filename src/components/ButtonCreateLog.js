@@ -8,7 +8,7 @@ class ButtonCreateLog extends React.Component {
     render() {
         return (
             <div>
-                <Link class="home-button__create-log button" to="/NewLogForm">Create Log</Link>
+                <Link className="home-button__create-log button" to="/NewLogForm">Create Log</Link>
             </div>
         )
     }

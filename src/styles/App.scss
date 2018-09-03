@@ -1,16 +1,38 @@
-// LogModal Styles
-@import './partials/log-modal.scss';
+// UTILITIES
+@import './partials/_setup.scss';
+// ============================
 
+// UTILITIES
+@import './partials/_utilities.scss';
+// ============================
 
+// GENERAL STYLES
+@import './partials/_general.scss';
+// ==========================
 
-.App {
-  text-align: center;
-}
+// TOPOGRAPHY
+@import './partials/_topography.scss';
+// =============================
 
-.header__image {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+// Home STYLES
+@import './partials/_home.scss';
+// =======================
+
+// NewLogForm STYLES
+@import './partials/_newLogForm.scss';
+// ===========================
+
+// PastLogs STYLES
+@import './partials/_pastLogs.scss';
+// ============================
+
+// LogModal STYLES
+@import './partials/_logModal.scss';
+// =================================
+
+// TopNav STYLES
+@import './partials/_topNav.scss';
+// ==========================
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
