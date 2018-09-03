@@ -1,6 +1,16 @@
-.top-nav__link {
-    font-size: 3rem;
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: $colour-body;
+    padding: 15px 10px;
+    &__link {
+        font-size: 1.6rem;
+        text-decoration: none;
+        color: $colour-white;
+        text-transform: uppercase;
+    }
 }
+
 // =================
 // RESPONSIVE DESIGN
 // =================

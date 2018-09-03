@@ -7,7 +7,7 @@ import {
 class ButtonPastLogs extends React.Component {
     render() {
         return (
-            <div>
+            <div className="button-container">
                 <Link className="home-button__past-logs button" to="/PastLogs">Past Logs</Link>
             </div>
         )

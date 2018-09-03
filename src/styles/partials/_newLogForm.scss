@@ -1,9 +1,50 @@
-.new-log-section {
+// .new-log-section {
 
+// }
+
+// .new-log-content {
+    
+// }
+
+.form-new-log {
+    padding-bottom: 10px;
 }
 
-.new-log-content {
-    height: 100vh;
+.date-partners-input-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header__outline {
+    margin: 20px 0 15px 0;
+}
+
+.header__retrospective {
+    margin: 30px 0 15px 0;
+}
+
+.input-label-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.input-label-container label {
+    text-transform: uppercase;
+    text-align: left;
+    width: 90%;
+    font-weight: 700;
+}
+
+.input-label-container input,
+.input-label-container textarea {
+    padding: 3px;
+    width: 90%;
+    background-color: $colour-prim;
+    border: none;
+    border-bottom: 2px solid $colour-body;
+    caret-color: #813405;
 }
 // =================
 // RESPONSIVE DESIGN

@@ -1,9 +1,40 @@
-.pastlogs-section {
+// .pastlogs-section {
 
-}
+// }
 
 .pastlogs-content {
     height: 100vh;
+}
+
+.log-list {
+    list-style: none;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &__item-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 20px 0;
+    }
+    &__item {
+        margin-right: 10px;
+        &__text {
+            margin: 0;
+            text-align: left;
+            cursor: pointer;
+            text-decoration: underline;
+            color: $colour-acc;
+            &:hover {
+                color: $colour-white;
+            }
+        }
+        &__delete-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    }
 }
 // =================
 // RESPONSIVE DESIGN

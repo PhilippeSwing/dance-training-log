@@ -7,7 +7,7 @@ import {
 class ButtonCreateLog extends React.Component {
     render() {
         return (
-            <div>
+            <div className="button-container">
                 <Link className="home-button__create-log button" to="/NewLogForm">Create Log</Link>
             </div>
         )

@@ -4,8 +4,8 @@ html {
 
 body {
     margin: 0;
-    // font-family:
-    // color:
+    font-family: $font-body;
+    color: $colour-body;
 }
 
 .wrapper-prim {
@@ -22,8 +22,14 @@ body {
 
 .button {
     text-decoration: none;
+    text-transform: uppercase;
+    color: $colour-white;
+    font-size: 2rem;
     padding: 15px 25px;
-    background-color: $colour-sec;
+    background-color: $colour-acc;
+    letter-spacing: 2.5px;
+    border: none;
+    border-radius: 30px;
 }
 
 .app-container-prim {
@@ -31,7 +37,6 @@ body {
 }
 
 .app-container-sec {
-    
     background-color: $colour-prim;
 }
 // =================
@@ -39,15 +44,11 @@ body {
 // =================
 // **Landscape phone to portrait tablet**
 @media (min-width: 480px) {
-    .app-container-sec {
-        background-position: center;
-    }
+    
 }
 // **Portrait tablet to small desktops**
 @media (min-width: 767px) {
-    .app-container-sec {
-        background-size: cover;
-    }
+
 }
 // **Small desktop to large desktops**
 @media (min-width: 940px) {

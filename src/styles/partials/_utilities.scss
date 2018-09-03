@@ -1,8 +1,15 @@
 // FONTS
-// $font-prim: ;
-// $font-sec: ;
+@font-face {
+    font-family: 'Park Lane NF';
+    src: url('../assets/fonts/parklane/ParkLaneNF.otf');
+    src: url('../assets/fonts/parklane/ParkLaneNF.ttf');
+}
+$font-head: 'Park Lane NF', 'Old Standard TT', serif;
+$font-body: 'Questrial', sans-serif;
 
 // COLOURS
 $colour-prim: #d7b377;
-// $colour-sec: #fe9000;
-$colour-sec: #813405;
+$colour-acc: #813405;
+$colour-body: #232323;
+$colour-white: #ffeee5;
+

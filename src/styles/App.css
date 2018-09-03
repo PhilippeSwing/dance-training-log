@@ -131,11 +131,18 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+@font-face {
+  font-family: 'Park Lane NF';
+  src: url("../assets/fonts/parklane/ParkLaneNF.otf");
+  src: url("../assets/fonts/parklane/ParkLaneNF.ttf"); }
+
 html {
   font-size: 63.5%; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  font-family: "Questrial", sans-serif;
+  color: #232323; }
 
 .wrapper-prim {
   border: 1px solid blue;
@@ -149,8 +156,14 @@ body {
 
 .button {
   text-decoration: none;
+  text-transform: uppercase;
+  color: #ffeee5;
+  font-size: 2rem;
   padding: 15px 25px;
-  background-color: #813405; }
+  background-color: #813405;
+  letter-spacing: 2.5px;
+  border: none;
+  border-radius: 30px; }
 
 .app-container-prim {
   text-align: center; }
@@ -158,19 +171,16 @@ body {
 .app-container-sec {
   background-color: #d7b377; }
 
-@media (min-width: 480px) {
-  .app-container-sec {
-    background-position: center; } }
-
-@media (min-width: 767px) {
-  .app-container-sec {
-    background-size: cover; } }
+h1, h2, h3, h4, .button {
+  font-family: "Park Lane NF", "Old Standard TT", serif;
+  margin: 0; }
 
 h1 {
-  font-size: 4rem; }
+  font-size: 5rem;
+  letter-spacing: 1.5px; }
 
 h2 {
-  font-size: 3rem; }
+  font-size: 3.2rem; }
 
 h3 {
   font-size: 2.5rem; }
@@ -178,28 +188,120 @@ h3 {
 h4 {
   font-size: 2rem; }
 
+p {
+  font-size: 1.8rem; }
+
+.header__page {
+  margin: 15px 0 10px 0; }
+
+.form-new-log label {
+  font-size: 1.5rem; }
+
+.input-label-container input,
+.input-label-container textarea {
+  font-size: 1.5rem; }
+
 .home-page-content {
   height: 100vh;
-  background: url("../assets/home-background-sec.png") bottom/contain no-repeat; }
-
-.header__image {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px; }
-
-.main-button-container {
+  background: url("../assets/images/home-background-sec.png") bottom/contain no-repeat;
   display: flex;
   flex-direction: column; }
 
-.new-log-content {
-  height: 100vh; }
+.header {
+  margin: 50px 0 0 0; }
+
+.home-buttons-container {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0 0 0; }
+
+.button-container {
+  margin: 20px 0; }
+
+@media (min-width: 480px) {
+  .home-page-content {
+    background-position: center; } }
+
+@media (min-width: 767px) {
+  .home-page-content {
+    background-size: cover; } }
+
+.form-new-log {
+  padding-bottom: 10px; }
+
+.date-partners-input-container {
+  display: flex;
+  justify-content: space-around; }
+
+.header__outline {
+  margin: 20px 0 15px 0; }
+
+.header__retrospective {
+  margin: 30px 0 15px 0; }
+
+.input-label-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0; }
+
+.input-label-container label {
+  text-transform: uppercase;
+  text-align: left;
+  width: 90%;
+  font-weight: 700; }
+
+.input-label-container input,
+.input-label-container textarea {
+  padding: 3px;
+  width: 90%;
+  background-color: #d7b377;
+  border: none;
+  border-bottom: 2px solid #232323;
+  caret-color: #813405; }
 
 .pastlogs-content {
   height: 100vh; }
 
+.log-list {
+  list-style: none;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+  .log-list__item-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 20px 0; }
+  .log-list__item {
+    margin-right: 10px; }
+    .log-list__item__text {
+      margin: 0;
+      text-align: left;
+      cursor: pointer;
+      text-decoration: underline;
+      color: #813405; }
+      .log-list__item__text:hover {
+        color: #ffeee5; }
+    .log-list__item__delete-icon {
+      font-size: 1.5rem;
+      cursor: pointer; }
+
+.pastlogs-section {
+  position: relative; }
+
+.past-logs__modal-container {
+  width: 80%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
 .past-logs__modal {
-  border: 1px solid red;
-  background-color: beige;
-  width: 80%; }
+  padding: 10px;
+  background-color: #e0cfb2;
+  text-align: left; }
 
 .past-logs__modal {
   position: relative; }
@@ -209,11 +311,13 @@ h4 {
   top: -10px;
   right: 10px; }
 
-.top-nav__link {
-  font-size: 3rem; }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #232323;
+  padding: 15px 10px; }
+  .top-nav__link {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #ffeee5;
+    text-transform: uppercase; }

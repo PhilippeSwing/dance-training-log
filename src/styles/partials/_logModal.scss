@@ -1,7 +1,18 @@
-.past-logs__modal {
-    border: 1px solid red; // temp
-    background-color: beige;
+.pastlogs-section {
+    position: relative;
+}
+.past-logs__modal-container {
     width: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.past-logs__modal {
+    padding: 10px;
+    background-color: #e0cfb2;
+    text-align: left;
 }
 
 .past-logs__modal {
