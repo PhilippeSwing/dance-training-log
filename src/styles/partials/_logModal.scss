@@ -13,16 +13,38 @@
     padding: 10px;
     background-color: #e0cfb2;
     text-align: left;
-}
-
-.past-logs__modal {
     position: relative;
+    border-radius: 10px;
+    border: 4px solid $colour-acc;
 }
 
-.past-Log__modal__close-link {
+.past-log__modal__header {
+    // font-size: 1.8rem;
+    font-family: $font-body;
+    margin-top: 10px;
+}
+
+.past-log__modal__item {
+    margin: 0;
+}
+
+.video-reference-link {
+    margin-top: 10px;
+}
+
+.past-log__modal__close-link {
     position: absolute;
-    top: -10px;
-    right: 10px;
+    top: -30px;
+    right: -13px;
+    &__icon {
+        // border: 0.5px solid $colour-prim;
+        cursor: pointer;
+        font-size: 3rem;
+        background-color: $colour-acc;
+        border-radius: 50%;
+        border: 3px solid $colour-acc;
+        color: $colour-prim;
+    }
 }
 // =================
 // RESPONSIVE DESIGN
