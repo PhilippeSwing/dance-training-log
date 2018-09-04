@@ -66,13 +66,13 @@ class App extends Component {
     })
     console.log(this.state);
   }
-
+  // Delete the PastLog on the front end
   deleteLogFrontEnd = (key) => {
     this.setState({
       logs: this.state.logs.filter(log => log.key !== key)
     })
   }
-
+  // Delete the PastLog in Firebase
   deleteLogFirebase = (key) => {
     return firebase.database().ref(`/${key}`).remove();
   }

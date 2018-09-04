@@ -1,8 +1,9 @@
 .top-nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: $colour-body;
     padding: 15px 10px;
+    align-items: center;
     &__link {
         font-size: 1.6rem;
         text-decoration: none;
@@ -29,23 +30,36 @@
             color: $colour-white;
             opacity: 0.7;
         }
-        
-        // &:hover .top-nav {
-        //     padding: 10px 10px;
-        // }
     }
 }
 
+.icon-microphone-container {
+    width: 6%;
+    display: none;
+}
+
+.icon-microphone {
+    width: 100%;
+    display: block;
+}
 // =================
 // RESPONSIVE DESIGN
 // =================
 // **Landscape phone to portrait tablet**
 @media (min-width: 480px) {
+    .icon-microphone-container {
+        display: block;
+    }
 
+    .top-nav {
+        justify-content: space-around;
+    }
 }
 // **Portrait tablet to small desktops**
 @media (min-width: 767px) {
-    
+    .top-nav {
+        padding: 15px 75px;
+    }
 }
 // **Small desktop to large desktops**
 @media (min-width: 940px) {

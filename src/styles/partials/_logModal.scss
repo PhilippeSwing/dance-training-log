@@ -1,6 +1,7 @@
 .pastlogs-section {
     position: relative;
 }
+
 .past-logs__modal-container {
     width: 80%;
     position: fixed;
@@ -19,7 +20,6 @@
 }
 
 .past-log__modal__header {
-    // font-size: 1.8rem;
     font-family: $font-body;
     margin-top: 10px;
 }
@@ -37,7 +37,6 @@
     top: -30px;
     right: -13px;
     &__icon {
-        // border: 0.5px solid $colour-prim;
         cursor: pointer;
         font-size: 3rem;
         background-color: $colour-acc;
@@ -55,7 +54,9 @@
 }
 // **Portrait tablet to small desktops**
 @media (min-width: 767px) {
-    
+    .past-logs__modal {
+        padding: 10px 10px 10px 25px;
+    }
 }
 // **Small desktop to large desktops**
 @media (min-width: 940px) {

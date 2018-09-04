@@ -22,8 +22,8 @@ class NewLogForm extends Component {
     }
 
     handleInputChange = (e) => {
-        // Square brackets says "this is a property on an object"
         this.setState({
+            // Square brackets says "this is a property on an object"
             [e.target.id]: e.target.value
         })
 
