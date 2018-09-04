@@ -176,7 +176,7 @@ h1, h2, h3, h4, .button {
   margin: 0; }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4.5rem;
   letter-spacing: 1.5px; }
 
 h2 {
@@ -218,9 +218,11 @@ p {
 .button-container {
   margin: 20px 0; }
 
-@media (min-width: 480px) {
-  .home-page-content {
-    background-position: center; } }
+@media (min-width: 380px) {
+  .header {
+    margin-top: 20px; }
+  .home-buttons-container {
+    margin: 30px 0 0 0; } }
 
 @media (min-width: 767px) {
   .home-page-content {
@@ -330,7 +332,7 @@ p {
 
 .top-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #232323;
   padding: 15px 10px; }
   .top-nav__link {
