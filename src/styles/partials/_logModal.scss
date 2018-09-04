@@ -60,5 +60,7 @@
 }
 // **Small desktop to large desktops**
 @media (min-width: 940px) {
-    
+    .past-logs__modal-container {
+        width: 50%;
+    }
 }

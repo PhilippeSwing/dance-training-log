@@ -351,6 +351,10 @@ p {
   .past-logs__modal {
     padding: 10px 10px 10px 25px; } }
 
+@media (min-width: 940px) {
+  .past-logs__modal-container {
+    width: 50%; } }
+
 .top-nav {
   display: flex;
   justify-content: space-between;
