@@ -1,3 +1,7 @@
+.new-log-section {
+    background-color: $colour-prim;
+}
+
 .form-new-log {
     padding-bottom: 10px;
 }
@@ -37,6 +41,11 @@
     border: none;
     border-bottom: 2px solid $colour-body;
     caret-color: #813405;
+}
+
+.input-label-container input::placeholder,
+.input-label-container textarea::placeholder {
+    color: $colour-body;
 }
 // =================
 // RESPONSIVE DESIGN
