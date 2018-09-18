@@ -165,6 +165,8 @@ body {
   letter-spacing: 2.5px;
   border: none;
   border-radius: 30px; }
+  .button:hover {
+    filter: brightness(1.25); }
 
 .app-container-prim {
   text-align: center;
