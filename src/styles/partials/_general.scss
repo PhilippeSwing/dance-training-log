@@ -14,7 +14,7 @@ body {
 }
 
 .wrapper-sec {
-    max-width: 800px;
+    max-width: 1920px;
     margin: 0 auto;
 }
 
@@ -36,15 +36,15 @@ body {
 
 .app-container-prim {
     text-align: center;
-    background: linear-gradient(to bottom, rgba(129, 52, 5, 0.4), rgba(129, 52, 5, 0.5)), url('../assets/images/main-background7.png'); 
+    background: linear-gradient(to bottom, rgba(129, 52, 5, 0.35), rgba(129, 52, 5, 0.35)), url('../assets/images/main-background7.png'); 
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.app-container-sec {
-    background-color: $colour-prim;
-}
+// .app-container-sec {
+//     background-color: $colour-prim;
+// }
 // =================
 // RESPONSIVE DESIGN
 // =================
